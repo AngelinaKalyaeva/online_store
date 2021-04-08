@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+}
+
+group 'org.online.store.api'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.4.4'
+    testCompile 'junit:junit:4.12'
+}
