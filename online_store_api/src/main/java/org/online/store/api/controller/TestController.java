@@ -1,7 +1,6 @@
 package org.online.store.api.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.online.store.api.repository.MarketRepository;
 import org.online.store.api.service.MarketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
