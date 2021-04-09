@@ -1,8 +1,9 @@
 package org.online.store.api.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.online.store.api.model.Order;
-import org.online.store.api.repository.IMarketDbRepository;
+import org.online.store.api.repository.MarketRepository;
+import org.online.store.api.service.MarketService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,10 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class TestController {
 
-    private final IMarketDbRepository iMarketDbRepository;
+    private MarketService service;
+
+    @Autowired
+    public TestController(MarketService service) {
+        this.service = service;
+    }
 
     @GetMapping("/")
     public String test() {
-        return iMarketDbRepository.getOrderById(1).get(0).toString();
+        return service.getAllOrders().toString();
     }
 }
