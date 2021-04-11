@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS public.customer
 CREATE TABLE IF NOT EXISTS public.product
 (
     id SERIAL,
-    name character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    name character varying(100) COLLATE pg_catalog."C" NOT NULL,
     price numeric NOT NULL,
     currency character varying(3) COLLATE pg_catalog."default" NOT NULL,
     description character varying(300) COLLATE pg_catalog."default",
@@ -72,7 +72,7 @@ INSERT INTO public.courier (id, name, phone_number, status) VALUES (2, 'Петр
 INSERT INTO public.customer (id, name, phone_number, email) VALUES (1, 'Сергеев Сергей Сергеевич', '+78396663782', 'test@mail.ru');
 INSERT INTO public.customer (id, name, phone_number, email) VALUES (2, 'Семенов Семен Семенович', '+79111002030', 'test@gmail.com');
 
-INSERT INTO public.product (id, name, price, currency, description, availability, available_items_number) VALUES (1, 'Xлеб', 40.00, 'RUB', NULL, true, 100);
+INSERT INTO public.product (id, name, price, currency, description, availability, available_items_number) VALUES (1, 'Хлеб', 40.00, 'RUB', NULL, true, 100);
 INSERT INTO public.product (id, name, price, currency, description, availability, available_items_number) VALUES (2, 'Вода', 20.00, 'RUB', 'Бутылка 0.5 литра, негазированная', true, 10);
 INSERT INTO public.product (id, name, price, currency, description, availability, available_items_number) VALUES (3, 'Яблоко', 100.00, 'RUB', 'Цена за кг', false, 13.5);
 
