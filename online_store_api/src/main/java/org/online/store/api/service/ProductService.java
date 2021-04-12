@@ -9,7 +9,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Locale;
 
 import static org.online.store.api.utils.SortingOrder.DESC;
 
@@ -36,7 +35,12 @@ public class ProductService {
         );
     }
 
-    public List<Product> searchForProductsByName(String name, int page, int size, String sortBy, SortingOrder sortingOrder) {
+    public List<Product> searchForProductsByName(
+            String name,
+            int page,
+            int size,
+            String sortBy,
+            SortingOrder sortingOrder) {
         if (sortBy.isEmpty()) {
             return repository.searchForProductsByName(DEFAULT_AVAILABILITY, name, PageRequest.of(page, size));
         }
