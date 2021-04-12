@@ -30,4 +30,15 @@ public class TestController {
     ) {
         return productService.getAllProducts(page, size, sortBy, sortingOrder).toString();
     }
+
+    @GetMapping("/search")
+    public String searchForProducts(
+            @RequestParam String name,
+            @RequestParam(defaultValue = "1") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "") String sortBy,
+            @RequestParam(defaultValue = "ASC") SortingOrder sortingOrder
+    ) {
+        return productService.searchForProductsByName(name, page - 1, size, sortBy, sortingOrder).toString();
+    }
 }
